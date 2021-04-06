@@ -14,10 +14,13 @@ public class RadioTest {
 
     }
     @Test
-    public void createRadioVolume() {
+    public void createRadioSound() {
         Radio radio = new Radio();
-        radio.setMaxVolume(10);
-        radio.setCurrentVolume(8);
-        assertEquals(8, radio.getCurrentVolume());
+        radio.setMaxSound(10);
+        radio.setCurrentSound(8);
+        assertEquals(8, radio.getCurrentSound());
     }
+
+    @Test
+
 }

@@ -5,27 +5,10 @@ public class Radio {
     private int maxStation;
     private int minStation;
     private int currentStation;
-    private String volume;
-    private int minVolume;
-    private int maxVolume;
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
-    public void setCurrentVolume(int currentVolume) {
-        if (currentVolume >= maxVolume) {
-            currentVolume = maxVolume;
-            return;
-        }
-        if (currentVolume <= minVolume) {
-            currentVolume = minVolume;
-            return;
-        }
-        this.currentVolume = currentVolume;
-    }
-
-    private int currentVolume;
+    private String sound;
+    private int minSound;
+    private int maxSound;
+    private int currentSound;
     private boolean on;
 
     public String getStation() {
@@ -66,33 +49,55 @@ public class Radio {
         this.currentStation = currentStation;
     }
 
-    public String getVolume() {
-        return volume;
+    public String getSound() {
+        return sound;
     }
 
-    public void setVolume(String volume) {
-        this.volume = volume;
+    public void setSound(String sound) {
+        this.sound = sound;
     }
 
-    public int getMinVolume() {
-        return minVolume;
+    public int getMinSound() {
+        return minSound;
     }
 
-    public void setMinVolume(int minVolume) {
-        if (currentVolume == minVolume)
-            currentVolume++;
-
-        this.minVolume = minVolume;
+    public void setMinSound(int minSound) {
+        this.minSound = minSound;
     }
 
-    public int getMaxVolume() {
-        return maxVolume;
+    public int getMaxSound() {
+        return maxSound;
     }
 
-    public void setMaxVolume(int maxVolume) {
-        if (currentVolume == maxVolume)
-            currentVolume--;
-        this.maxVolume = maxVolume;
+    public void setMaxSound(int maxSound) {
+        this.maxSound = maxSound;
+    }
+
+    public int getCurrentSound() {
+
+        return currentSound;
+    }
+
+    public void decreaseCurrentSound() {
+        if (currentSound == maxSound) {
+            currentSound--;
+            return;
+        }
+        setCurrentSound(currentSound - 1);
+    }
+
+    public void setCurrentSound(int currentSound) {
+        if (currentSound >= maxSound) {
+            currentSound = maxSound;
+            return;
+        }
+        if (currentSound <= minSound) {
+            currentSound = minSound;
+            return;
+        }
+        this.currentSound = currentSound;
+
+
     }
 
     public boolean isOn() {
