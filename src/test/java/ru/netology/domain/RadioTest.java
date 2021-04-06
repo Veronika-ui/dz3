@@ -21,6 +21,4 @@ public class RadioTest {
         assertEquals(8, radio.getCurrentSound());
     }
 
-    @Test
-
 }
